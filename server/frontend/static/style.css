@@ -124,3 +124,31 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+.card-img {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    max-width: 60%;
+    height: auto;
+}
+
+.contact-img {
+  max-width: 30%;
+  height: auto;
+  align-content: center;
+}
+
+.Contact-box {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.contact-item {
+  
+  margin-bottom: 15px;
+}
+.contact-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
