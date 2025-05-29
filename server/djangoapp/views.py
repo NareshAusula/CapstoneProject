@@ -7,6 +7,8 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
 from django.contrib import messages
 from datetime import datetime
+from .models import CarMake, CarModel
+from djangoapp.populate import initiate
 
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
@@ -78,6 +80,14 @@ def registration(request):
         data = {"userName":username,"error":"Already Registered"}
         return JsonResponse(data)
     
+
+def get_cars(request):
+    if CarMake.objects.count() == 0:
+        initiate()
+    cars = list(CarModel.objects.select_related('car_make').values(
+        'name', 'car_make__name'
+    ))
+    return JsonResponse({"CarModels": cars})
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
 # def get_dealerships(request):
