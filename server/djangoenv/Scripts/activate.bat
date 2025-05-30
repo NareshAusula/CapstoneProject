@@ -5,7 +5,7 @@
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-@set "VIRTUAL_ENV=C:\Users\nanir\OneDrive\Desktop\coursera practice\CapstoneProject\CapstoneProject\server\djangoenv"
+@set "VIRTUAL_ENV=C:\Users\nanir\OneDrive\Desktop\coursera practice\CapstoneProject\server\djangoenv"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (

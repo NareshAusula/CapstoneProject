@@ -45,7 +45,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='C:\Users\nanir\OneDrive\Desktop\coursera practice\CapstoneProject\CapstoneProject\server\djangoenv'
+VIRTUAL_ENV='C:\Users\nanir\OneDrive\Desktop\coursera practice\CapstoneProject\server\djangoenv'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi
