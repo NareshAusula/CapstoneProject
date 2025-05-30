@@ -142,3 +142,10 @@ def add_review(request):
             return JsonResponse({"status":401,"message":"Error in posting review"})
     else:
         return JsonResponse({"status":403,"message":"Unauthorized"})
+
+
+#def dealer_details(request, dealer_id):
+    # Your implementation here
+   # passdef dealer_details(request, dealer_id):
+    # Your implementation here
+  #  pass
