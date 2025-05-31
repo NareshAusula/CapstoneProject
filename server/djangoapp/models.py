@@ -1,8 +1,7 @@
 from django.db import models
 
 from django.core.validators import MaxValueValidator, MinValueValidator
-
-
+ 
 # represents a car manufacture/make
 class CarMake(models.Model):  # Stores car Manufacturers
     name = models.CharField(max_length=100)  # For eg name of the car
@@ -10,12 +9,12 @@ class CarMake(models.Model):  # Stores car Manufacturers
 
     def __str__(self):  # Returns the name when model is printed/converted to string
         return self.name
-
-
+ 
 # Represents a specific car model
 class CarModel(models.Model):
     car_make = models.ForeignKey(
-        CarMake, on_delete=models.CASCADE
+        CarMake, 
+        on_delete=models.CASCADE
     )  # Forgein key to CarMake(Deletes when carmake is deleted)
     name = models.CharField(max_length=100)  # model name
     CAR_TYPES = [
