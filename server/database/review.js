@@ -1,7 +1,4 @@
-/* eslint-disable */
-// or for specific rules
-/* eslint-disable es6/no-const, es6/no-arrow-functions */
-
+/* jshint esversion: 6 */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;

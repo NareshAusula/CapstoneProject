@@ -14,5 +14,8 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.1",
     "react-scripts": "^5.0.1"
-  }
+  },
+  "jshintConfig": {
+  "esversion": 6
+}
 }
