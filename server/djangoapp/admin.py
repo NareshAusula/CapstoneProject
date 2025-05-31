@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import CarMake, CarModel
 
 
-# CarModelInline  Allows editing CarModel entries directly within the CarMake admin page.
+# CarModelInline  Allows editing CarModel entries directly within the
+# CarMake admin page.
 class CarModelInline(
     admin.StackedInline
 ):  # Displays fields vertically (use TabularInline for a compact table).
