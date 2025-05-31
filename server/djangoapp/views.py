@@ -94,8 +94,8 @@ def get_cars(request):
     return JsonResponse({"CarModels":cars})
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
-#Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
-#Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+# Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+# Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
 def get_dealerships(request, state="All"):
     if(state == "All"):
         endpoint = "/fetchDealers"
@@ -144,7 +144,7 @@ def add_review(request):
         return JsonResponse({"status":403,"message":"Unauthorized"})
 
 
-#def dealer_details(request, dealer_id):
+# def dealer_details(request, dealer_id):
     # Your implementation here
    # passdef dealer_details(request, dealer_id):
     # Your implementation here
