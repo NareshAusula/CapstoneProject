@@ -1,22 +1,25 @@
-from django.db import models
-
+from django.db import models 
 from django.core.validators import MaxValueValidator, MinValueValidator
- 
-# represents a car manufacture/make
-class CarMake(models.Model):  # Stores car Manufacturers
-    name = models.CharField(max_length=100)  # For eg name of the car
-    description = models.TextField()  # For longer text Description
 
-    def __str__(self):  # Returns the name when model is printed/converted to string
+
+class CarMake(models.Model):
+    """Stores car Manufacturers"""
+    name = models.CharField(max_length=100)  # Name of the car make
+    description = models.TextField()  # Longer text description
+
+    def __str__(self):
+        """Returns the name when model is printed/converted to string"""
         return self.name
- 
-# Represents a specific car model
+
+
 class CarModel(models.Model):
+    """Represents a specific car model"""
     car_make = models.ForeignKey(
-        CarMake, 
+        CarMake,
         on_delete=models.CASCADE
-    )  # Forgein key to CarMake(Deletes when carmake is deleted)
-    name = models.CharField(max_length=100)  # model name
+    )  # Foreign key to CarMake (deletes when carmake is deleted)
+    name = models.CharField(max_length=100)  # Model name
+    
     CAR_TYPES = [
         ("SEDAN", "Sedan"),
         ("SUV", "SUV"),
@@ -24,16 +27,21 @@ class CarModel(models.Model):
         ("HATCHBACK", "Hatchback"),
         ("COUPE", "Coupe"),
     ]
+    
     type = models.CharField(
-        max_length=10, choices=CAR_TYPES, default="SUV"
-    )  # Limited to predefined choices (Sedan/SUV/Wagon) with default SUV
+        max_length=10,
+        choices=CAR_TYPES,
+        default="SUV"
+    )  # Limited to predefined choices with default SUV
+    
     year = models.IntegerField(
         default=2023,
-        validators=[  # Integer between 2015-2023 (default 2023)
+        validators=[
             MaxValueValidator(2023),
             MinValueValidator(2015),
         ],
-    )
+    )  # Integer between 2015-2023 (default 2023)
 
-    def __str__(self):  # Returns "Make Name Model Name" format
-        return f"{self.car_make.name}  {self.name}"
+    def __str__(self):
+        """Returns 'Make Name Model Name' format"""
+        return f"{self.car_make.name} {self.name}"
