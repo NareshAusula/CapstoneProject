@@ -1,4 +1,6 @@
-/* jshint esversion: 6 */
+/* eslint-disable */
+// or for specific rules
+
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
