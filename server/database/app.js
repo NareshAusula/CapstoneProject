@@ -1,6 +1,4 @@
-/* eslint-disable */
-// or for specific rules
-/* eslint-disable es6/no-const, es6/no-arrow-functions */
+/* jshint esversion: 8 */ 
 
 const express = require('express');
 const mongoose = require('mongoose');
