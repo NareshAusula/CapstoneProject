@@ -8,8 +8,8 @@ import negative_icon from "../assets/negative.png";
 import review_icon from "../assets/reviewbutton.png";
 import Header from '../Header/Header';
 
- 
- const Dealer = () => {
+
+const Dealer = () => {
   const [dealer, setDealer] = useState();
   const [reviews, setReviews] = useState([]);
   const [unreviewed, setUnreviewed] = useState(false);
@@ -45,8 +45,8 @@ import Header from '../Header/Header';
 
   const senti_icon = useCallback((sentiment) => {
     return sentiment === "positive" ? positive_icon :
-           sentiment === "negative" ? negative_icon :
-           neutral_icon;
+      sentiment === "negative" ? negative_icon :
+        neutral_icon;
   }, []);
 
   useEffect(() => {
@@ -99,4 +99,3 @@ import Header from '../Header/Header';
 };
 
 export default Dealer;
- 
