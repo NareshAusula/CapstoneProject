@@ -1,5 +1,4 @@
 /* eslint-disable */
-// or for specific rules
 
 const mongoose = require('mongoose');
 
