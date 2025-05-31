@@ -1,13 +1,17 @@
+/* eslint-disable */
+// or for specific rules
+/* eslint-disable es6/no-const, es6/no-arrow-functions */
+
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
 const reviews = new Schema({
-	id: {
+  id: {
     type: Number,
     required: true,
-	},
-	name: {
+  },
+  name: {
     type: String,
     required: true
   },

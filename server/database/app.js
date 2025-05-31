@@ -1,3 +1,7 @@
+/* eslint-disable */
+// or for specific rules
+/* eslint-disable es6/no-const, es6/no-arrow-functions */
+
 const express = require('express');
 const mongoose = require('mongoose');
 const fs = require('fs');
@@ -14,7 +18,7 @@ const dealerships_data = JSON.parse(fs.readFileSync("dealerships.json", 'utf8'))
 
 mongoose.connect("mongodb://mongo_db:27017/", { dbName: 'dealershipsDB' });
 
- const Reviews = require('./review');
+const Reviews = require('./review');
 const Dealerships = require('./dealership');
 
 try {
