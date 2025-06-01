@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class CarMake(models.Model):
     """Stores car Manufacturers"""
+
     name = models.CharField(max_length=100)  # Name of the car make
     description = models.TextField()  # Longer text description
 
@@ -14,9 +15,9 @@ class CarMake(models.Model):
 
 class CarModel(models.Model):
     """Represents a specific car model"""
+
     car_make = models.ForeignKey(
-        CarMake,
-        on_delete=models.CASCADE
+        CarMake, on_delete=models.CASCADE
     )  # Foreign key to CarMake (deletes when carmake is deleted)
     name = models.CharField(max_length=100)  # Model name
     CAR_TYPES = [
@@ -27,9 +28,7 @@ class CarModel(models.Model):
         ("COUPE", "Coupe"),
     ]
     type = models.CharField(
-        max_length=10,
-        choices=CAR_TYPES,
-        default="SUV"
+        max_length=10, choices=CAR_TYPES, default="SUV"
     )  # Limited to predefined choices with default SUV
 
     year = models.IntegerField(
@@ -42,4 +41,4 @@ class CarModel(models.Model):
 
     def __str__(self):
         """Returns 'Make Name Model Name' format"""
-        return f"{self.car_make.name} {self.name}" 
+        return f"{self.car_make.name} {self.name}"
