@@ -1,4 +1,4 @@
-from django.db import models 
+from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -19,7 +19,6 @@ class CarModel(models.Model):
         on_delete=models.CASCADE
     )  # Foreign key to CarMake (deletes when carmake is deleted)
     name = models.CharField(max_length=100)  # Model name
-    
     CAR_TYPES = [
         ("SEDAN", "Sedan"),
         ("SUV", "SUV"),
@@ -27,13 +26,12 @@ class CarModel(models.Model):
         ("HATCHBACK", "Hatchback"),
         ("COUPE", "Coupe"),
     ]
-    
     type = models.CharField(
         max_length=10,
         choices=CAR_TYPES,
         default="SUV"
     )  # Limited to predefined choices with default SUV
-    
+
     year = models.IntegerField(
         default=2023,
         validators=[
