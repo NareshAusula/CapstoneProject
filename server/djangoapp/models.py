@@ -43,3 +43,4 @@ class CarModel(models.Model):
     def __str__(self):
         """Returns 'Make Name Model Name' format"""
         return f"{self.car_make.name} {self.name}"
+    
